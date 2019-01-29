@@ -1,5 +1,5 @@
 ---
-title: Linux命令遇到的问题总结
+title: 执行docker命令遇到 Get Permission Denied
 date: 2018-11-13 16:36:12
 categories: Docker笔记
 tags:
