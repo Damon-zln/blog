@@ -25,7 +25,7 @@ tags:
 
   1. 进入超级用户模式。也就是输入`su -` ，系统会让你输入超级用户密码，输入后就进入了超级用户模式。（当然你可以直接使用root登录）
   2. 编辑`/etc/sudoers`文件。也就是输入命令`vim /etc/sudoers`进入编辑模式，找到这一行：`root ALL=(ALL) ALL`在下面添加`xxx ALL=(ALL) ALL`（这里的xxx是你的用户名），然后保存退出即可。
-
+<!--more-->
 ### 3. linux中`drwxr-xr-x`的意思和权限：
 
 - 读（read），写（write），执行（recute），简写（r，w，x），用数字表示（4，2，1）

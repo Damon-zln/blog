@@ -1,3 +1,4 @@
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}{% if theme.footer.beian.enable %}{#
@@ -9,6 +10,13 @@
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
+  <br>
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+    本站访客数:<span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div> 
+
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>

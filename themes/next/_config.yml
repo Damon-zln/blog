@@ -178,6 +178,7 @@ site_state: true
 social:
   GitHub: https://github.com/Damon-zln || github
   Weibo: https://weibo.com/u/3975490359 || weibo
+  博客园: https://www.cnblogs.com/dazhan || feed
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -201,11 +202,12 @@ social_icons:
 # Blog rolls
 links_icon: link
 links_title: Technical Blog Links
-#links_layout: block
-links_layout: inline
+links_layout: block
+#links_layout: inline
 links:
   JAVA技术驿站: http://cmsblogs.com
   程序猿DD: http://blog.didispace.com
+  GitHubDaily: https://weibo.com/GitHubDaily?is_hot=1
 
 # Sidebar Avatar
 avatar:
@@ -871,7 +873,7 @@ canvas_nest:
 # three_waves
 three_waves: false
 # canvas_lines
-canvas_lines: false
+canvas_lines: true
 # canvas_sphere
 canvas_sphere: false
 

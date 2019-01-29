@@ -32,7 +32,7 @@ tags: mysql
   - `lines terminated by`行间分隔符
 
     定义每行的分隔符
-
+<!--more-->
 - 问题分析：
 
   - 以上实例在实际的运行中出现如下错误：
