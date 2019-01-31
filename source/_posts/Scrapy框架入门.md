@@ -24,9 +24,9 @@ tags:
 - item.py： 定义item数据结构（爬取的数据结构）
 - pipeline.py： 定义数据管道
 - settings.py： 配置文件
-- middlewares.py： 定义爬取时的中间件
+e middlewares.py： 定义爬取时的中间件
 - spiders： 放置Spiders的文件夹
-
+<!--more-->
 ### 3. 创建Spider
 
 Spider是自己定义的类，Scrapy用它来从网页抓取内容，并解析抓取结果。该类必须继承Scrapy提供的Spider类scrapy.Spider。
