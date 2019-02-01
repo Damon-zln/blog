@@ -7,7 +7,7 @@
         new Valine({
             av: AV,
             el: '.comments',
-            notify: false, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
             verify: true,
             app_id: '{{ theme.valine.appId }}',
             app_key: '{{ theme.valine.appKey }}',
