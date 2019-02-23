@@ -32,6 +32,52 @@ tags:
     3306:3306 将容器的3306端口映射到本机的3306端口 (左边是宿主机端口，右边是容器内端口)
     ```
 
+- 使用脚本 + crontab 方式定期备份运行在主机docker 容器内部数据
+
+  备份脚本：
+
+  ```shell
+  #!/bin/bash
+  # author: Damon Zhang
+  # description: back up web_scrape database weekly
+  
+  docker exec -i mysql bash << 'EOF'
+  
+  rm web_scrape_*
+  
+  mysqldump -uroot -proot web_scrape > web_scrape_$(date +%Y_%m_%d).sql
+  
+  exit
+  
+  EOF
+  
+  basepath=$(cd `dirname $0`; pwd)/mysql
+  
+  if [ ! -d "$basepath" ]; then
+     mkdir $basepath
+  fi
+  
+  docker cp mysql:/web_scrape_$(date +%Y_%m_%d).sql $basepath
+  
+  gzip $basepath/web_scrape_$(date +%Y_%m_%d).sql
+  ```
+
+  添加crontab任务：
+
+  ```shell
+  crontab -e
+  
+  # 每周日零点备份数据库
+  0 0 * * 0 . /etc/profile; /bin/sh /home/damon.zhang/backup/mysql_backup.sh
+  ```
+
+  > 注：
+  >
+  > 1. 注意一定要添加“ . /etc/profile;" ，这句用于将环境变量include进当前脚本的执行环境
+  > 2. `/home/damon.zhang/backup/mysql_backup.sh` 这个是脚本的绝对路径
+  >
+  >
+
 ### 2. docker安装redis
 
 - 查看镜像
