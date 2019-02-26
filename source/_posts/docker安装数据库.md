@@ -17,7 +17,8 @@ tags:
 - 拉取镜像
 
   `docker pull mysql:5.7`
-<!--more-->
+  <!--more-->
+
 - 运行镜像
 
   `docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7`
@@ -67,8 +68,8 @@ tags:
   ```shell
   crontab -e
   
-  # 每周日零点备份数据库
-  0 0 * * 0 . /etc/profile; /bin/sh /home/damon.zhang/backup/mysql_backup.sh
+  # 每周日早上6点备份数据库
+  0 6 * * 0 . /etc/profile; /bin/sh /home/damon.zhang/backup/mysql_backup.sh
   ```
 
   > 注：
@@ -76,7 +77,12 @@ tags:
   > 1. 注意一定要添加“ . /etc/profile;" ，这句用于将环境变量include进当前脚本的执行环境
   > 2. `/home/damon.zhang/backup/mysql_backup.sh` 这个是脚本的绝对路径
   >
-  >
+
+  重启crontabd服务：
+
+  ```shell
+  service crond restart
+  ```
 
 ### 2. docker安装redis
 
